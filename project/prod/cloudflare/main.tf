@@ -23,3 +23,21 @@ resource "cloudflare_record" "monitoring" {
   ttl     = 1
 }
 
+resource "cloudflare_record" "prometheus" {
+  zone_id = cloudflare_zone.rising_shop.id
+  name    = "prrometheus"
+  type    = "A"
+  value   = "13.231.248.113"
+  proxied = true
+  ttl     = 1
+}
+
+resource "cloudflare_record" "nodeexporter" {
+  zone_id = cloudflare_zone.rising_shop.id
+  name    = "nodeexporter"
+  type    = "A"
+  value   = "13.231.248.113"
+  proxied = true
+  ttl     = 1
+}
+
